@@ -1,0 +1,11 @@
+.blogform {
+  margin: 20px;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.errtext {
+  text-decoration-color: darkred;
+}
