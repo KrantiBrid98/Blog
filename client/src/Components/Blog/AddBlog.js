@@ -51,6 +51,7 @@ class AddBlog extends Component {
       </div>
     );
   }
+
   renderTextArea({ input, label, meta, data_testid }) {
     return (
       <div className="form-group row">
@@ -67,24 +68,25 @@ class AddBlog extends Component {
   }
 
   toggleHover = () => {
-      this.setState({hover: !this.state.hover})
+    this.setState({ hover: !this.state.hover })
   }
 
   renderSelectBox = ({ input, meta, data_testid }) => {
     const categories = ['Science', 'Programming', 'Health', 'World', 'Astronomy', 'Research', 'Money', 'Food']
-    var style = this.state.hover ? {"backgroundColor": "black", "color":"white"} : {"backgroundColor": "white", "color":"black"}
+    var style = this.state.hover ? { "backgroundColor": "black", "color": "white" } : { "backgroundColor": "white", "color": "black" }
     console.log(this.state, style)
-    
+
     return (
       <div className="form-group row">
         <div className="col-sm-9">
           <select {...input} className="form-control font" data-testid={data_testid}>
             <option defaultValue="0">Choose...</option>
             {
-              categories.map(category => {
+              categories.map((category, index) => {
                 return (
                   <option
-                  style={style}
+                    style={style}
+                    key={index}
                     onMouseEnter={this.toggleHover()}
                     onMouseOut={this.toggleHover()}
                     value={category}>{category}</option>
@@ -98,6 +100,7 @@ class AddBlog extends Component {
     );
   }
   render() {
+    console.log(this.props, 'propa')
     return (
       <div className="blogform">
         <div className="panel panel-default">

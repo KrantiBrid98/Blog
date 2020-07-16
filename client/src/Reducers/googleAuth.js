@@ -13,9 +13,9 @@ export default (state = INITIAL_STATE, action) => {
                 isSignedIn: true,
                 userId: action.payload.userId,
                 userName: action.payload.userName,
+                userProfileImg: action.payload.userProfileImg
             }
-        case 'SIGN_OUT': 
-        console.log(action.payload.userId, 'action')
+        case 'SIGN_OUT':
             return {
                 ...state,
                 isSignedIn: false,

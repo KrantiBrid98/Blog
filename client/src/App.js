@@ -1,11 +1,14 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 //https://www.apollographql.com/docs/react/get-started/
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import AddBlog from "./Components/Blog/AddBlog";
-import Header from './Components/Header/header'
-import "./styles/index.css"
+import PostsList from "./Components/Blog/PostsList";
+import PostDetail from "./Components/Blog/PostDetail";
+import Header from './Components/Header/header';
+import "./styles/index.css";
 
 
 const client = new ApolloClient({
@@ -15,10 +18,18 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <Header/>
-        <AddBlog />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path="/posts/category:category" component={PostsList}/>
+            <Route path="/addBlog" component={AddBlog} />
+            <Route path="/post/postid:postid" component={PostDetail} />
+            <Route path="/" exact component={PostsList}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
+
     </ApolloProvider>
   );
 }

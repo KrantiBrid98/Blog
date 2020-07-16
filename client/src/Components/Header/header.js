@@ -1,14 +1,12 @@
 import React from 'react'
 import GoogleAuth from '../GoogleAuth/googleAuth'
+import Categoryheader from './categoryheader'
 
 const Header = () => {
     return (
-        <div class="container header">
-            {/* <div class="row">
-                <div class="col-sm" style={{"marginLeft":"70%"}}> */}
-                    <GoogleAuth />
-                {/* </div>
-            </div> */}
+        <div className="container header">
+            <GoogleAuth />
+            <Categoryheader />
         </div>
     )
 }

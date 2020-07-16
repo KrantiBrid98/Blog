@@ -13,8 +13,18 @@ const typeDefs = gql`
     }
 
     type Query {
-        post(id: String!): Post,
-        posts: [Post]
+        Post(id: ID
+            userName: String
+            userId: ID
+            title: String
+            category: String
+            content: String
+            _id: String
+            first: Int
+            offset: Int
+            orderBy: [_PostOrdering]
+            filter: _PostFilter) : [Post],
+        Posts: [Post]
     }
 
     type Mutation {
