@@ -1,0 +1,19 @@
+.comment-box {
+    height: 43px;
+    width: 550px;
+    margin: 10px;
+}
+
+.error {
+    padding: 13px;
+    background: #f67b7b33;
+    color: red;
+}
+
+.comment-list {
+    padding: 15px;
+    background-color: lightgrey;
+    text-align: left;
+    font-family: cursive;
+    margin: 5px;
+}

@@ -3,7 +3,7 @@ const { ApolloServer } = require('apollo-server');
 const { makeAugmentedSchema } = require('neo4j-graphql-js');
 const neo4j = require('neo4j-driver');
 
-const { typeDefs, resolver } = require('./src/resolvers')
+const { typeDefs, resolver } = require('./src/schema')
 
 const schema = makeAugmentedSchema({ typeDefs });
 

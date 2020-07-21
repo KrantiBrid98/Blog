@@ -1,13 +1,13 @@
 const INITIAL_STATE = {
     isSignedIn: null,
     userId: '',
-    userName: null
+    userName: null,
+    userProfileImg: ''
 }
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'SIGN_IN': 
-        console.log(action.payload.userId, 'action')
             return {
                 ...state,
                 isSignedIn: true,
@@ -21,6 +21,7 @@ export default (state = INITIAL_STATE, action) => {
                 isSignedIn: false,
                 userId: null,
                 userName: null,
+                userProfileImg: ''
             }
         default:
             return state

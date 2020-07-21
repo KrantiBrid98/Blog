@@ -14,5 +14,5 @@ export const getPostByCategory = gql`
         Post(category: $category) {
         title
         }
-    }
+   }
 `

@@ -16,11 +16,14 @@
 
 .authBtn {
     position: relative;
-    left: 87%;
     margin: 5px !important;
 }
 
-
+.userBtn {
+	border-radius: 50%;
+    width: 45px;
+    padding: 2px;
+}
 #main-div {
 	width : 200px;
 	height : 100px;

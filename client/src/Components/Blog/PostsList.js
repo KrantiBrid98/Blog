@@ -10,11 +10,11 @@ const PostsList = props => {
         <div>
             {
                 posts ? (posts.length > 0 ? posts.map(post => {
-                    return <Link to={`/post/postid${post.id}`}>
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">{post.title}</h3>
-                                <p class="card-text">{post.content}</p>
+                    return <Link to={`/post/postid${post.id}`} key ={post.id}>
+                        <div className="card">
+                            <div className="card-body">
+                                <h3 className="card-title">{post.title}</h3>
+                                <p className="card-text">{post.content}</p>
                                 <h6>{post.userName}</h6>
                             </div>
                         </div>

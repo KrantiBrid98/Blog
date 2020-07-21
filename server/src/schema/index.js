@@ -7,9 +7,24 @@ const typeDefs = gql`
         id: ID!,
         userName: String,
         userId: ID!,
+        userImg: String,
         title: String,
         category: String,
-        content: String
+        content: String,
+        comment: [Written] 
+    }
+
+    type Written @relation(name: "HAS_COMMENT", direction: "OUT") {
+        from: Comment
+        to: Post
+    }
+
+    type Comment {
+        commentId: ID!,
+        postId: ID!,
+        userId: ID,
+        userName: String
+        content: String,
     }
 
     type Query {
@@ -19,16 +34,14 @@ const typeDefs = gql`
             title: String
             category: String
             content: String
-            _id: String
-            first: Int
-            offset: Int
-            orderBy: [_PostOrdering]
-            filter: _PostFilter) : [Post],
+            userImg: String,
+            ) : [Post],
+
         Posts: [Post]
     }
 
     type Mutation {
-        CreatePost(id: ID,  userName: String, userId: ID!, title: String, category: String, content: String): Post
+        CreatePost(id: ID,  userName: String, userImg: String, userId: ID!, title: String, category: String, content: String): Post
     }
 `
 

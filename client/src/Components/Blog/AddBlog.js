@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom'
 
 class AddBlog extends Component {
   constructor(props) {
@@ -25,11 +26,13 @@ class AddBlog extends Component {
   };
 
   submitData = async (formValues) => {
+    console.log(formValues)
     this.props.mutate({
       variables: {
         id: uuidv4(),
         userId: this.props.auth.userId,
         userName: this.props.auth.userName,
+        userImg: this.props.auth.userProfileImg,
         title: formValues.title,
         category: formValues.blog_category,
         content: formValues.blog_content,
@@ -74,7 +77,6 @@ class AddBlog extends Component {
   renderSelectBox = ({ input, meta, data_testid }) => {
     const categories = ['Science', 'Programming', 'Health', 'World', 'Astronomy', 'Research', 'Money', 'Food']
     var style = this.state.hover ? { "backgroundColor": "black", "color": "white" } : { "backgroundColor": "white", "color": "black" }
-    console.log(this.state, style)
 
     return (
       <div className="form-group row">
@@ -100,7 +102,6 @@ class AddBlog extends Component {
     );
   }
   render() {
-    console.log(this.props, 'propa')
     return (
       <div className="blogform">
         <div className="panel panel-default">
@@ -132,8 +133,8 @@ class AddBlog extends Component {
                 placeholder="Content"
                 data_testid="blog_content"
               />
-              <button className="ui inverted primary button" data_testid="submit">
-                Submit
+              <button className="ui inverted primary button" data_testid="submit">               
+                  Submit
               </button>
             </form>
           </div>
@@ -170,6 +171,7 @@ const mutation = gql`
 mutation CREATEPOST(
       $id: ID!
       $userName: String
+      $userImg: String
       $userId: ID!
       $title: String
       $category: String
@@ -178,6 +180,7 @@ mutation CREATEPOST(
   CreatePost(
       id: $id
       userName: $userName
+      userImg: $userImg
       userId: $userId
       title: $title
       category: $category

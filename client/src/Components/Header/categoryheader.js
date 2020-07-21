@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 const Categoryheader = () => {
     const categories = ['Science', 'Programming', 'Health', 'World', 'Astronomy', 'Research', 'Money', 'Food']
     return (
-        <div class="ui fluid nine item menu categoryHeaderWrapper" style={{ "border": "0", "margin": "0" }}>
-            <Link to={'/posts/categoryAll'} class="item">All</Link>
+        <div className="ui fluid nine item menu categoryHeaderWrapper" style={{ "border": "0", "margin": "0" }}>
+            <Link to={'/posts/categoryAll'} className="item">All</Link>
             {
-                categories.map(category => {
+                categories.map((category, index) => {
                     return (
-                        <Link to={`/posts/category${category}`} class="item">{category}</Link>
+                        <Link to={`/posts/category${category}`} className="item" key ={index}>{category}</Link>
                     )
                 })
             }

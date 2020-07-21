@@ -1,2 +1,4 @@
 @import './theme.css';
-@import './posts.css'
+@import './posts.css';
+@import './userProfile.css';
+@import './comment.css'

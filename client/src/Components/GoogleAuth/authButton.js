@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 // can be used for other authentication types too
 const AuthButton = ({ state, isSignedIn, onSignOutClick, onSignInClick }) => {
-    console.log(isSignedIn, 'button')
     if (isSignedIn === 'null') {
         return <div>Loading...</div>
     }
-    return <div className="ui inverted segment" style={{ "padding": "2px","marginBottom":"2px" }}>
+    return <div>
         {
             isSignedIn ?
-                <button data-testid="authButton" className="ui inverted red button authBtn" onClick={onSignOutClick}>{state.label.signOut}</button>
+                <Link to='/'>
+                    <button data-testid="authButton" className="ui inverted red button authBtn" onClick={onSignOutClick}>{state.label.signOut}</button>
+                </Link>
                 :
                 <button data-testid="authButton" className="ui inverted red button authBtn" onClick={onSignInClick}><i className="fa fa-google"></i>{state.label.signIn}</button>
         }

@@ -1,0 +1,30 @@
+mutation {
+  CreateComment(commentId:"300" postId:"634afb15-e31e-4496-8cbb-2db8cf3fe3b1" userId:"102731573821035620443" userName:"Kranti Brid" content:"Very informative post"){
+    content
+  }
+}
+
+AddPostComment(from:{commentId:"300"} to:{id:"634afb15-e31e-4496-8cbb-2db8cf3fe3b1"}){
+    from {
+      content
+      userName
+    }
+    to{
+      userName
+      category
+      content
+    }
+  }
+
+  query {
+  Post(id:"e0f3ef72-3ea3-49ad-a38f-fe210c12281d"){
+    title
+    comment{
+      Comment{
+        content
+        userId
+        userName
+      }
+    }
+  }
+}

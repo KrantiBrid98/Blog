@@ -1,0 +1,17 @@
+.profileWrapper {
+    background-color:ghostwhite;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 32px;
+}
+
+.userName {
+    font-size: 34px;
+    font-family: sans-serif;
+}
+
+.userPic {
+    width: 114px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+}

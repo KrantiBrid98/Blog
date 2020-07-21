@@ -20,7 +20,7 @@
     font-size: 17px;
     font-family: cursive;
     color: grey;
-    margin: 5px;
+    margin: 10px;
 }
 
 .userProfilePic {
@@ -35,7 +35,7 @@
     border-radius: 9px;    
     color: grey;
     font-family: cursive;
-    margin-top: 4px;
+    margin-top: 8px;
     background-color: ghostwhite;
     border-color: currentColor;
 }
