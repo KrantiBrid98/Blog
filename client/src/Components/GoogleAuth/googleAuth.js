@@ -1,5 +1,6 @@
 import React from "react";
 import AuthButton from "./authButton";
+import UserValidation from './userValidation'
 import { connect } from "react-redux";
 import { signIn, signOut } from "../../actions/googleAuth"
 
@@ -46,7 +47,17 @@ class GoogleAuth extends React.Component {
     }
 
     render() {
-        return <AuthButton state={this.state} isSignedIn={this.props.isSignedIn} onSignInClick={this.onSignInClick} onSignOutClick={this.onSignOutClick} />
+        return (
+            <div>
+                <AuthButton state={this.state}
+                    isSignedIn={this.props.isSignedIn}
+                    onSignInClick={this.onSignInClick}
+                    onSignOutClick={this.onSignOutClick}
+                />
+                < UserValidation />
+            </div>
+
+        )
     }
 }
 

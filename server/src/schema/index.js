@@ -27,6 +27,13 @@ const typeDefs = gql`
         content: String,
     }
 
+    type User {
+        userId: ID
+        userName: String
+        userEmail: String!
+        userImg: String
+    }
+
     type Query {
         Post(id: ID
             userName: String
@@ -38,6 +45,7 @@ const typeDefs = gql`
             ) : [Post],
 
         Posts: [Post]
+        user: [User]
     }
 
     type Mutation {

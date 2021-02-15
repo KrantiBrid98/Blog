@@ -28,3 +28,20 @@ AddPostComment(from:{commentId:"300"} to:{id:"634afb15-e31e-4496-8cbb-2db8cf3fe3
     }
   }
 }
+
+mutation CREATEUSER(
+    $userId: ID
+    $userName: String
+    $userEmail: String!
+    $userImg: String
+  ) {
+    CreateUser(
+      userId: $userId
+      userName: $userName
+      userEmail: $userEmail
+      userImg: $userImg
+    ) {
+      userName
+    }
+}
+

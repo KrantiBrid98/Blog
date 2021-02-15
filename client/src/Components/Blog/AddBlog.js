@@ -193,7 +193,7 @@ mutation CREATEPOST(
 `
 
 
-const AddBlog1 = connect(mapStateToProps, {})(AddBlog);
+const AddBlog1 = connect(mapStateToProps)(AddBlog);
 
 AddBlog = graphql(mutation)(AddBlog1)
 
